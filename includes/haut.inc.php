@@ -16,7 +16,13 @@
                     <a href="#page-top"></a>
                 </li>
                 <li class="page-scroll">
-                    <a href="connexion.php">Connexion</a>
+                    <?php
+                        if($loggedIn)
+                            echo "<span class='loggedIn' style='color: white;'>Bienvenue " . strval($email) . " / <a href='php/logout.php'>Deconnexion</a></span>";
+                        else
+                            echo "<a href='login.php'>Connexion</a>";
+                    ?>
+                </li>
             </ul>
         </div>
         <!-- /.navbar-collapse -->
