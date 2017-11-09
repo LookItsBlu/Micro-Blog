@@ -1,10 +1,10 @@
 <?php
-    if(isset($_COOKIE['_session'])) {
+    if(isset($_COOKIE['session'])) {
         include('php/conndb.php');
 
         $sql = 'select email from utilisateurs where sid = :sid';
         $prep = $pdo->prepare($sql);
-        $prep->bindValue(':sid', $_COOKIE['_session']);
+        $prep->bindValue(':sid', $_COOKIE['session']);
         $prep->execute();
 
         $entry = $prep->fetch();

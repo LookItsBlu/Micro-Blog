@@ -9,4 +9,4 @@
     $prep->bindValue(':email', $email);
     $prep->execute();
 
-    setcookie('_session', $sid, time()+30);
+    setcookie('session', $sid, time()+30, '/');
