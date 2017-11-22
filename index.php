@@ -31,7 +31,7 @@
                 <?php
                     if($loggedIn) {
                         echo <<<FORM
-                        <form method="post" action="php/updateMsg.php?a=add">
+                        <form method="post" action="php/updateMsg.php?action=add">
                             <div class="col-sm-10">
                                 <div class="form-group">
                                     <textarea id="message" name="message" class="form-control" placeholder="Message"></textarea>
