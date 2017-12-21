@@ -77,4 +77,5 @@ include('includes/bas.inc.php');
 
 ?>
 
+</body>
 </html>
