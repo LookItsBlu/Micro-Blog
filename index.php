@@ -28,6 +28,15 @@
     <section>
         <div class="container">
             <div class="row">
+                <form method="get" action="." class="navbar-form navbar-left" role="search">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search" name="searchTerm">
+                    </div>
+                    <button type="submit" class="btn btn-info"><i class="glyphicon glyphicon-search"></i></button>
+                </form>
+            </div>
+
+            <div class="row">
                 <?php
                     if($loggedIn) {
                         echo <<<FORM
@@ -52,6 +61,8 @@ FORM;
                     <?php include('includes/messages.inc.php'); ?>
 
                 </div>
+
+                <?php include('includes/pagination.inc.php'); ?>
             </div>
         </div>
     </section>

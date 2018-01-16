@@ -19,8 +19,11 @@
                     <?php
                         if($loggedIn)
                             echo "<span class='loggedIn' style='color: white;'>Bienvenue " . strval($email) . " / <a href='php/logout.php'>Deconnexion</a></span>";
-                        else
-                            echo "<a href='login.php'>Connexion</a>";
+                        else {
+                            echo "<span><a href='login.php'>Connexion</a>";
+                            echo " | ";
+                            echo "<a href='signup/'>Inscription</a></span>";
+                        }
                     ?>
                 </li>
             </ul>

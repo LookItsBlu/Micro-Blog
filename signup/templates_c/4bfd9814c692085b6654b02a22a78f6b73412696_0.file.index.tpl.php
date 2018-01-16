@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.31, created on 2017-12-21 14:40:29
+/* Smarty version 3.1.31, created on 2018-01-16 18:50:43
   from "C:\wamp64\www\LP\micro_blog\signup\templates\index.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.31',
-  'unifunc' => 'content_5a3bc7dd278fd7_78831778',
+  'unifunc' => 'content_5a5e498302e256_79900599',
   'has_nocache_code' => false,
   'file_dependency' =>
   array (
     '4bfd9814c692085b6654b02a22a78f6b73412696' =>
     array (
       0 => 'C:\\wamp64\\www\\LP\\micro_blog\\signup\\templates\\index.tpl',
-      1 => 1513867209,
+      1 => 1516128639,
       2 => 'file',
     ),
   ),
@@ -20,13 +20,12 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5a3bc7dd278fd7_78831778 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5a5e498302e256_79900599 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 
 
 <html>
 	<head>
-
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta name="description" content="">
@@ -36,10 +35,8 @@ function content_5a3bc7dd278fd7_78831778 (Smarty_Internal_Template $_smarty_tpl)
 
 		<!-- Bootstrap Core CSS -->
 		<link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
 		<!-- Theme CSS -->
 		<link href="../css/freelancer.css" rel="stylesheet">
-
 		<!-- Custom Fonts -->
 		<link href="../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 		<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
@@ -55,7 +52,6 @@ function content_5a3bc7dd278fd7_78831778 (Smarty_Internal_Template $_smarty_tpl)
  src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"><?php echo '</script'; ?>
 >
 		<![endif]-->
-
 	</head>
 
 	<body>
@@ -80,7 +76,7 @@ function content_5a3bc7dd278fd7_78831778 (Smarty_Internal_Template $_smarty_tpl)
 							<?php if ($_smarty_tpl->tpl_vars['loggedIn']->value) {?>
 								<span class='loggedIn' style='color: white;'>Bienvenue " . strval($email) . " / <a href='php/logout.php'>Deconnexion</a></span>
 							<?php } else { ?>
-								<a href='login.php'>Connexion</a>
+								<a href='../login.php'>Connexion</a>
 							<?php }?>
 						</li>
 					</ul>
@@ -105,8 +101,29 @@ function content_5a3bc7dd278fd7_78831778 (Smarty_Internal_Template $_smarty_tpl)
 			</div>
 		</header>
 
-		<p>Bonjour, <?php echo $_smarty_tpl->tpl_vars['name']->value;?>
-, Bienvenue dans Smarty!</p>
+
+        <?php if ($_smarty_tpl->tpl_vars['signupError']->value != '') {?>
+            <p style='display: block; width: 50%; margin: 20px auto; color: red; font-size: 20px;'><?php echo $_smarty_tpl->tpl_vars['signupError']->value;?>
+</p>
+        <?php }?>
+
+        <form action='.' method='POST' style='width: 50%; margin: 20px auto;'>
+            <div class='form-group'>
+                <label for='email'>Email:</label>
+                <input type='email' class='form-control' id='email' name='email'>
+            </div>
+            <div class='form-group'>
+                <label for='pwd'>Mot de Passe:</label>
+                <input type='password' class='form-control' id='pwd' name='pwd'>
+            </div>
+            <div class='form-group'>
+                <label for='pwd'>Confirmation du Mot de Passe:</label>
+                <input type='password' class='form-control' id='pwdconfirm' name='pwdconfirm'>
+            </div>
+
+            <input class='btn btn-primary' type='submit'>
+        </form>
+
 
 		<!-- Footer -->
 		<footer class="text-center">
@@ -150,26 +167,23 @@ function content_5a3bc7dd278fd7_78831778 (Smarty_Internal_Template $_smarty_tpl)
 		<?php echo '<script'; ?>
  src="../vendor/jquery/jquery.min.js"><?php echo '</script'; ?>
 >
-
 		<!-- Bootstrap Core JavaScript -->
 		<?php echo '<script'; ?>
  src="../vendor/bootstrap/js/bootstrap.min.js"><?php echo '</script'; ?>
 >
-
 		<!-- Plugin JavaScript -->
 		<?php echo '<script'; ?>
  src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"><?php echo '</script'; ?>
 >
-
 		<!-- Theme JavaScript -->
 		<?php echo '<script'; ?>
  src="../js/freelancer.min.js"><?php echo '</script'; ?>
 >
 
-
 		<?php echo '<script'; ?>
  src="../js/editMsg.js"><?php echo '</script'; ?>
 >
 	</body>
-</html><?php }
+</html>
+<?php }
 }

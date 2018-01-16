@@ -48,7 +48,7 @@
 							{if $loggedIn }
 								<span class='loggedIn' style='color: white;'>Bienvenue " . strval($email) . " / <a href='php/logout.php'>Deconnexion</a></span>
 							{else}
-								<a href='login.php'>Connexion</a>
+								<a href='../login.php'>Connexion</a>
 							{/if}
 						</li>
 					</ul>
@@ -73,9 +73,26 @@
 		</header>
 
 
+        {if $signupError != ''}
+            <p style='display: block; width: 50%; margin: 20px auto; color: red; font-size: 20px;'>{$signupError}</p>
+        {/if}
 
-		<p>Bonjour, {$name}, Bienvenue dans Smarty!</p>
+        <form action='.' method='POST' style='width: 50%; margin: 20px auto;'>
+            <div class='form-group'>
+                <label for='email'>Email:</label>
+                <input type='email' class='form-control' id='email' name='email'>
+            </div>
+            <div class='form-group'>
+                <label for='pwd'>Mot de Passe:</label>
+                <input type='password' class='form-control' id='pwd' name='pwd'>
+            </div>
+            <div class='form-group'>
+                <label for='pwd'>Confirmation du Mot de Passe:</label>
+                <input type='password' class='form-control' id='pwdconfirm' name='pwdconfirm'>
+            </div>
 
+            <input class='btn btn-primary' type='submit'>
+        </form>
 
 
 		<!-- Footer -->
