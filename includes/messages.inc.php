@@ -30,6 +30,11 @@
         $editBtn = '<a class="btn btn-info btn-sm editBtn"><i class="fa fa-pencil"></i></a>';
 
         //build blockquotes
+        $data['contenu'] = preg_replace('/https?:\/\/(.*?)\/(.*\/[^\/\s]*)/', "<a href='http://$1/$2'>$1</a>", $data['contenu']);
+        $data['contenu'] = preg_replace('/([^\s]+)@([^\s]+)/', "<a href='mailto:$1@$2'>mail $1</a>", $data['contenu']);
+
+        if(strlen($data['contenu']) > 150) { $data['contenu'] = substr($data['contenu'], 0, 150)."... <a href='#' class='show-more' data-id=".$data['id'].">Lire la suite</a>"; }
+
         $msgEntry = '<blockquote> <p>' . $data['contenu'] . '</p> <footer>???, ' . date('d F Y, H:m:s', $data['date']);
         if($loggedIn) { $msgEntry .= ' ' . $delBtn . ' ' . $editBtn; }
         $msgEntry .= '</footer> </blockquote>';

@@ -14,6 +14,11 @@
                 <div class="footer-col col-md-4">
                     <h3>A propos</h3>
                     <p>Micro blog est une application PHP basée sur le thème <a href="https://startbootstrap.com/template-overviews/freelancer/">Freelancer</a>.</p>
+                    <a class="social twitter" href="https://twitter.com"></a>
+                    <a class="social facebook" href="https://facebook.com"></a>
+                    <a class="social youtube" href="https://youtube.com"></a>
+                    <a class="social linkedin" href="https://linkedin.com"></a>
+                    <a class="social googleplus" href="https://plus.google.com"></a>
                 </div>
             </div>
         </div>
@@ -49,4 +54,5 @@
 <script src="js/freelancer.min.js"></script>
 
 
-<script src="js/editMsg.js"></script>
+<script src="js/editMsg.min.js"></script>
+<script src="js/ajax.min.js"></script>

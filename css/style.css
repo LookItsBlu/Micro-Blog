@@ -1,0 +1,6 @@
+.social { background-image: url('../img/social.png'); width: 48px; height: 48px; display: inline-block; }
+.facebook { background-position: 48px 48px } .facebook:hover { background-position: 48px 0 }
+.youtube { background-position: 96px 48px } .youtube:hover { background-position: 96px 0 }
+.twitter { background-position: 144px 48px } .twitter:hover { background-position: 144px 0 }
+.linkedin { background-position: 192px 48px } .linkedin:hover { background-position: 192px 0 }
+.googleplus { background-position: 240px 48px } .googleplus:hover { background-position: 240px 0 }
