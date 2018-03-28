@@ -50,6 +50,20 @@ gulp.task('minify-js', function() {
         }))
 });
 
+// Minify personal CSS & JS
+gulp.task('minify-all-js', function() {
+    return gulp.src(['js/*.js', '!js/*.min.js'])
+        .pipe(uglify())
+        .pipe(rename({ suffix: '.min' }))
+        .pipe(gulp.dest('js'))
+});
+gulp.task('minify-all-css', function() {
+    return gulp.src(['css/*.css', '!css/*.min.css'])
+        .pipe(cleanCSS({ compatibility: 'ie8' }))
+        .pipe(rename({ suffix: '.min' }))
+        .pipe(gulp.dest('css'))
+});
+
 // Copy vendor libraries from /node_modules into /vendor
 gulp.task('copy', function() {
     gulp.src(['node_modules/bootstrap/dist/**/*', '!**/npm.js', '!**/bootstrap-theme.*', '!**/*.map'])

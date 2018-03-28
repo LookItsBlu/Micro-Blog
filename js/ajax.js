@@ -1,18 +1,13 @@
 $('document').ready(function(){
-	$('.sendMsg').click(function(){
+	$('.show-more').on('click', function(e){
+		e.preventDefault();
 		$.ajax({
-			type: 'POST',
-			url: 'sendMsg.php',
-			success: function(msg){
-				console.log(msg);
-
-				if(msg) {
-					var dt = new Date();
-					var time = dt.getHours() + ":" + dt.getMinutes() + ":" + dt.getSeconds();
-					$('.messageList').append('<blockquote> <p>' + $('#message').value + '</p> <footer>???, ' . time . '</footer> </blockquote>');
-				} else {
-					alert("error when sending message, please try again at a later time");
-				}
+			context: this,
+			type: 'GET',
+			url: 'php/expandmessage.php',
+			data: {id: $(this).attr('data-id')},
+			success: function(data){
+				$(this).parent()[0].innerHTML = JSON.parse(data)[0];
 			}
 		});
 	});
